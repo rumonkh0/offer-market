@@ -21,7 +21,8 @@ function Slider() {
   const slider = new Glide(".glide", sliderConfiguration);
 
   useEffect(() => {
-    return () => slider.mount();
+    slider.mount();
+    return () => slider.destroy();
   }, [slider]);
   return (
       <div className={"glide"}>
