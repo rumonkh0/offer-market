@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./coupons.module.css";
 import Cards from "../cards/Cards";
+import Tips from "../tips/Tips";
 
 function Coupons() {
   return (
@@ -18,6 +19,10 @@ function Coupons() {
       <div className={style.section}>
         <p>Patio Furniture</p>
         <Cards />
+      </div>
+      <div className={style.section}>
+        <p>Saving Tips</p>
+        <Tips />
       </div>
     </div>
   );

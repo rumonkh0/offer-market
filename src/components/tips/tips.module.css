@@ -1,0 +1,36 @@
+.tips {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 480px;
+    max-width: 680px;
+    flex-grow: 1;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.image{
+    align-self: flex-start;
+}
+.details{
+    padding: 0 15px;
+}
+.title{
+    font-size: 20px;
+    font-weight: bold;
+}
+.author{
+    font-size: 0.875rem;
+}
+.description {
+    font-size: 1rem;
+}
+.tags{
+    font-size: 0.75rem;
+    text-align: end;
+    padding-top: 5px;
+}
