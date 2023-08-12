@@ -12,7 +12,6 @@ const images = [
 
 const sliderConfiguration = {
   gap: 20,
-  perView: 1,
   startAt: 0,
   type: "carousel",
   perView: 1
@@ -23,7 +22,7 @@ function Slider() {
 
   useEffect(() => {
     return () => slider.mount();
-  }, []);
+  }, [slider]);
   return (
       <div className={"glide"}>
         <div className={"glide__track "+style.glide__track} data-glide-el="track">

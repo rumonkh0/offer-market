@@ -1,11 +1,12 @@
 import "./App.css";
+import Cards from "./components/cards/Cards";
 import Slider from "./components/slider/Slider";
 
 function App() {
   return (
     <div className="App">
-      <p> hello from rumon!</p>
       <Slider />
+      <Cards/>
     </div>
   );
 }
