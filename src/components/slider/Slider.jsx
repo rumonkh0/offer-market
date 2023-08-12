@@ -32,8 +32,8 @@ function Slider() {
         data-glide-el="track"
       >
         <ul className="glide__slides">
-          {images.map((img) => (
-            <li className="glide__slide slider">
+          {images.map((img, index) => (
+            <li className="glide__slide slider" key={index}>
               <img className={style.rounded} src={img} alt={img} />
             </li>
           ))}

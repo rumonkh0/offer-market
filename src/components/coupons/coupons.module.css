@@ -1,0 +1,13 @@
+.coupons{
+    padding: 0 70px;
+}
+.title{
+    text-align: center;
+}
+.section{
+    margin-bottom: 80px;
+}
+.section>p{
+    font-size: 1.125rem;
+    font-weight: 700;
+}
