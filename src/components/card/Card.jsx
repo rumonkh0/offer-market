@@ -28,7 +28,7 @@ function Card() {
         <div className={style.card_footer}>
           <del>$435.45</del>
           <div>
-            <de>$34.45</de>
+            <p>$34.45</p>
             <p>free shipping</p>
           </div>
         </div>

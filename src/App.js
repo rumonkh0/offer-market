@@ -1,8 +1,8 @@
 import "./App.css";
-import Cards from "./components/cards/Cards";
+// import Cards from "./components/cards/Cards";
 import Slider from "./components/slider/Slider";
 import Coupouns from "./components/coupons/Coupons";
-import Tips from "./components/tips/Tips";
+// import Tips from "./components/tips/Tips";
 
 function App() {
   return (

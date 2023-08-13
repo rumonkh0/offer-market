@@ -8,8 +8,8 @@ function Tips() {
   return (
     <div>
       <div className={style.tips}>
-        {loop.map(() => (
-          <div className={style.tip}>
+        {loop.map((index) => (
+          <div key={index} className={style.tip}>
             <div className={style.image}>
               <img
                 src="https://sgi2.offerscdn.net/i/production/published/65/filename/21696.h120.w120.flim.v33.bffffff.png"
