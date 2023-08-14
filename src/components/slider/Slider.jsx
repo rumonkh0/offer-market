@@ -11,7 +11,7 @@ const images = [
 ];
 
 const sliderConfiguration = {
-  gap: 20,
+  gap: 40,
   startAt: 0,
   type: "carousel",
   perView: 1,

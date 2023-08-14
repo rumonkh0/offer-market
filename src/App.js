@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <Slider />
       <Coupouns/>
-      {/* <Tips/> */}
     </div>
   );
 }

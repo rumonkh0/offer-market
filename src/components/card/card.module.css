@@ -9,6 +9,11 @@
   border: 1px solid #e5e7eb;
   cursor: pointer;
   flex-grow: 1;
+  transition: all 0.5s ease;
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .card_img {
