@@ -5,7 +5,7 @@ const hr = {
   background: "gray",
   border: "none",
   height: "1px",
-  width: "200px",
+  width: "80%",
 };
 
 function Card() {

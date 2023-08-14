@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  margin: 0 30px;
+}
+
+.sidebar {
+  max-width: 280px;
+  min-width: 250px;
+  padding: 10px;
+}
+.sidebar > div {
+  margin-bottom: 60px;
+}
+p > a{
+    text-decoration: none;
+}
+.categories {
+  padding: 10px;
+  width: 100%;
+}
+.category {
+  margin-bottom: 40px;
+}
+.category > p {
+  padding: 10px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
