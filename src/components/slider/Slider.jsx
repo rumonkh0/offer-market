@@ -26,7 +26,7 @@ function Slider() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className={"glide"}>
+    <div className={"glide " + style.glide}>
       <div
         className={"glide__track " + style.glide__track}
         data-glide-el="track"
