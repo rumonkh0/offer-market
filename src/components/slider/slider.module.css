@@ -8,7 +8,10 @@
 .glide {
   overflow: hidden;
 }
-
+.glide{
+  overflow: hidden;
+  margin: 10px 0;
+}
 .glide__track {
   overflow: visible;
   margin: auto;
