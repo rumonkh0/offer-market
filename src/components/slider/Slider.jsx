@@ -14,6 +14,8 @@ const sliderConfiguration = {
   gap: 40,
   startAt: 0,
   type: "carousel",
+  autoplay: 3000,
+  peek: 80,
   perView: 1,
 };
 
@@ -72,6 +74,14 @@ function Slider() {
             ></path>
           </svg>
         </button>
+      </div>
+      <div
+        class={"glide__bullets " + style.glide__bullets}
+        data-glide-el="controls[nav]"
+      >
+        {images.map((img, index) => (
+          <button class={"glide__bullet "+style.glide__bullet} data-glide-dir={`=${index}`}></button>
+        ))}
       </div>
     </div>
   );

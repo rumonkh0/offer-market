@@ -4,14 +4,14 @@
   box-shadow: inset rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .glide{
-  overflow: hidden;
   margin: 10px 0;
+  padding-bottom: 20px;
 }
-.glide__track {
+/* .glide__track {
   overflow: visible;
   margin: auto;
   width: 90%;
-}
+} */
 
 .glide__arrow__left,
 .glide__arrow__right {
@@ -29,10 +29,10 @@
   border-color: #fff;
 }
 .glide__arrow__left {
-  left: 7%;
+  left: 100px;
 }
 .glide__arrow__right {
-  right: 7%;
+  right: 100px;
 }
 .svg{
     transform: rotate(180deg);
@@ -46,9 +46,10 @@
   left: 50%;
   list-style: none;
   position: absolute;
-  transform: translateX(-50%);
+  transform: translate(-50%, 400%);
   z-index: 2;
 }
+
 .glide__bullet {
   background-color: hsla(0, 0%, 100%, 0.5);
   border: 2px solid transparent;
