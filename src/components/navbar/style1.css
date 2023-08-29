@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* navbar */
+
+.nav{
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+#brand-title{
+    background-color: #fff;
+    flex: 50%;
+    padding: 20px;
+}
+
+#brand-title h1 a{
+    text-decoration: none;
+    font-size: 2.15rem;
+    font-weight: 700;
+    color: darkcyan;
+}
+
+#search-box{
+    background-color: #0B666A;
+    padding: 20px;
+    flex: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    width: 60%;
+    padding: 5px;
+    font-size: 1rem;
+    color: #000000;
+    /* background: white url(images/LogoMakr-1.png) right center no-repeat; */
+    border: 1px solid #C8D03E;
+}
+
+.search-button{
+    margin-left: 2px;
+    font-size: 1rem;
+    padding: 6px;
+    background-color: #217afa;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+nav .bar span {
+    position: absolute;
+    right: 40px;
+    top: 17px;
+    color: #13010190;
+    font-size: 27px;
+    display: none;
+}
+
+/* menu-section */
+
+#menu-section{
+    background: #071952
+}
+
+#menu{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0 20px 20px;
+}
+
+#menu li a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 0 30px 0 0;
+    font-size: 1.25rem;
+}
+
+#menu li a:hover{
+    color: red;
+}
+
+@media screen and (max-width: 900px){
+    /* navbar */
+    nav{
+        flex-direction: column;
+    }
+    #brand-title{
+        text-align: center;
+    }
+    /* navbar with menu-section */
+    #menu{
+        display: none;
+    }
+    #menu li{
+        text-align: center;
+    }
+    #menu li a{
+        display: block;
+        padding: 12px;
+    }
+    nav .bar {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 5px;
+        cursor: pointer;
+    }
+    nav .bar #bars{
+        display: block;
+    }
+    nav .bar #times {
+        display: none;
+    }
+    #check:checked~nav .bar #times {
+        display: block;
+    }
+    #check:checked~nav .bar #bars {
+        display: none;
+    }
+    #check:checked~#menu-section #menu{
+        display: block;
+        position: relative;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+}
+
+.another{
+    height: 100px;
+    background-color: black;
+    color: wheat;
+}
