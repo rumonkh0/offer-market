@@ -8,9 +8,9 @@ function Coupons() {
     <div className={style.coupons}>
       <div className={style.title}>
         <h1>Coupons and Deals From Stores You Love</h1>
-        <h6>
+        <h5>
           When you buy through links on our site, we may earn a commission.{" "}
-        </h6>
+        </h5>
       </div>
       <div className={style.section}>
         <p>Featured Deals</p>

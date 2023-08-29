@@ -5,11 +5,12 @@
   max-width: 300px;
   height: 360px;
   background-color: #fff;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   border: 1px solid #e5e7eb;
   cursor: pointer;
   flex-grow: 1;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 .card:hover {
   transform: scale(1.05);
@@ -23,6 +24,12 @@
   position: relative;
   width: 100%;
   height: 180px;
+  overflow: hidden;
+}
+.card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .abs {
@@ -34,7 +41,11 @@
   left: 0;
   padding: 10px 15px;
   background-color: rgb(5 30 68);
-  border-radius: 1.5rem 0;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  border-radius: 1rem 0;
   color: white;
 }
 .offer {
@@ -49,7 +60,17 @@
   border: 1px solid rgba(243, 244, 246, 0.938);
   border-radius: 1rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
 }
+
+.hr {
+  border: none;
+  background: rgba(128, 128, 128, 0.493);
+  height: 1px;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .card_details {
   display: flex;
   flex-direction: column;
@@ -57,17 +78,19 @@
   height: 180px;
   padding: 8px;
 }
-
-.card_footer_top:first-child {
-  font-size: 0.75rem;
+.card_footer_top {
+  flex-grow: 1;
 }
-.card_footer_top:last-child {
+
+.card_footer_top > p:first-child {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.card_footer_top > p:last-child {
   font-size: 0.875rem;
 }
 
 .card_footer {
-  align-content: flex-end;
-  margin-top: auto;
   padding-bottom: 5px;
 }
 .card_footer p,
@@ -77,6 +100,43 @@ del {
 }
 .card_footer div {
   font-weight: bold;
+  text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    height: 10rem;
+    transition: all 0.3s ease;
+  }
+  .card_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 260px;
+  }
+  .hr {
+    display: none;
+  }
+  .card_details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+  }
+  .card_footer{
+    padding-bottom: 0;
+  }
+  .card_footer div {
+    flex-direction: column;
+  }
+  .card_footer_top > p:first-child{
+    margin-top: 0;
+  }
 }

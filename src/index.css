@@ -2,12 +2,15 @@
 @import "../node_modules/@glidejs/glide/dist/css/glide.theme.min.css";
 * {
   box-sizing: border-box;
+  /* margin: 0; */
 }
 
-.glide__bullet--active{
-  color: red;
-  background-color: red;
-  width: 30px;
+.glide__bullet--active {
+  background-color: #464849 !important;
+}
+
+.glide__bullet:focus {
+  border: none !important;
 }
 
 body {

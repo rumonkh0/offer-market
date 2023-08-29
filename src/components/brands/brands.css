@@ -24,6 +24,12 @@
         max-height: 200px;
         max-width: 33%;
      }
+     .top-brand h3{
+        padding-left: 50px;
+     }
+     .brand-logo{
+        padding: 0 27px 0 0;
+    }
 }
 
 @media screen and (max-width: 550px){

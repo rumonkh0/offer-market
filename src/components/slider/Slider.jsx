@@ -1,32 +1,67 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Glide from "@glidejs/glide";
 
 // Import Swiper styles
 import style from "./slider.module.css";
-
-const images = [
+var images;
+var pcImages = [
   "https://sgi1.offerscdn.net/i/production/published/92/image/3605.h312.w1248.flpad.v2.bffffff.jpg",
   "https://sgi1.offerscdn.net/i/production/published/92/image/3606.h312.w1248.flpad.v2.bffffff.jpg",
   "https://sgi2.offerscdn.net/i/production/published/92/image/3588.h312.w1248.flpad.v4.bffffff.jpg",
 ];
 
+var mobileimage = ["images/slider/1.jpg", "images/slider/2.jpg"];
 const sliderConfiguration = {
-  gap: 40,
+  gap: 30,
   startAt: 0,
   type: "carousel",
-  autoplay: 3000,
-  peek: 80,
+  // autoplay: 3000,
+  // peek: 80,
   perView: 1,
 };
 
 function Slider() {
-  const slider = new Glide(".glide", sliderConfiguration);
+  const [width, setwidth] = useState([window.innerWidth, window.innerHeight]);
+  if (width[0] < 768) {
+    images = mobileimage;
+    console.log("image seems to changed");
+  } else {
+    images = pcImages;
+  }
+  if (width[0] < 1300) {
+    delete sliderConfiguration.peek;
+  }
+  var slider;
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setwidth([window.innerWidth, window.innerHeight]);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    if (width[0] < 768) {
+      images = mobileimage;
+    } else {
+      images = pcImages;
+    }
+    if (width[0] < 1300) {
+      delete sliderConfiguration.peek;
+    }
+    slider = new Glide(".glide", sliderConfiguration);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [width]);
 
   useEffect(() => {
     slider.mount();
     return () => slider.destroy();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
+
+
   return (
     <div className={"glide " + style.glide}>
       <div
@@ -35,7 +70,7 @@ function Slider() {
       >
         <ul className="glide__slides">
           {images.map((img, index) => (
-            <li className="glide__slide slider" key={index}>
+            <li className={"glide__slide slider " + style.slider} key={index}>
               <img className={style.rounded} src={img} alt={img} />
             </li>
           ))}
@@ -76,11 +111,15 @@ function Slider() {
         </button>
       </div>
       <div
-        class={"glide__bullets " + style.glide__bullets}
+        className={"glide__bullets " + style.glide__bullets}
         data-glide-el="controls[nav]"
       >
         {images.map((img, index) => (
-          <button class={"glide__bullet "+style.glide__bullet} data-glide-dir={`=${index}`}></button>
+          <button
+            className={"glide__bullet " + style.glide__bullet}
+            data-glide-dir={`=${index}`}
+            key={index}
+          ></button>
         ))}
       </div>
     </div>
