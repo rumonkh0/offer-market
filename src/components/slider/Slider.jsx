@@ -47,6 +47,7 @@ function Slider() {
     if (width[0] < 1300) {
       delete sliderConfiguration.peek;
     }
+    // eslint-disable-next-line
     slider = new Glide(".glide", sliderConfiguration);
     return () => {
       window.removeEventListener("resize", handleWindowResize);

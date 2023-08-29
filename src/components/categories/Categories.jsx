@@ -63,18 +63,18 @@ function Categories() {
       <div className={style.categories}>
         <>
           <Swiper
-            slidesPerView={1}
             centeredSlides={false}
             grabCursor={true}
+            freeMode={true}
             keyboard={{
               enabled: true,
             }}
-            breakpoints={{
-              269: {
-                slidesPerView: 4,
-                slidesPerGroup: 3,
-              },
-            }}
+            // breakpoints={{
+            //   269: {
+            //     // slidesPerView: 3,
+            //     slidesPerGroup: 3,
+            //   },
+            // }}
             scrollbar={true}
             navigation={true}
             
@@ -83,8 +83,20 @@ function Categories() {
           >
             <SwiperSlide>
               <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <Card/>
             </SwiperSlide>
             <SwiperSlide>
@@ -107,7 +119,7 @@ function Categories() {
             </SwiperSlide>
             <SwiperSlide>
               <Card/>
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
         </>
         <div className={style.category}>
