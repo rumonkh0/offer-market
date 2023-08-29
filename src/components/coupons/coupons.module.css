@@ -11,3 +11,9 @@
     font-size: 1.125rem;
     font-weight: 700;
 }
+
+@media screen and (max-width: 768px) {
+    .coupons{
+        padding: 0 1rem;
+    }
+  }

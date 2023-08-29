@@ -1,6 +1,7 @@
 .main {
   display: flex;
-  margin: 0 30px;
+  padding: 0 30px;
+  width: 100%;
 }
 
 .sidebar {
@@ -9,20 +10,29 @@
   padding: 10px;
 }
 .sidebar > div {
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
-p > a{
-    text-decoration: none;
+p > a {
+  text-decoration: none;
 }
 .categories {
   padding: 10px;
-  width: 100%;
+  width: calc(100% - 250px);
 }
 .category {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 .category > p {
   padding: 10px 0;
   font-size: 1.25rem;
   font-weight: 500;
+}
+.sw {
+  height: 380px;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .main {
+    display: none;
+  }
 }

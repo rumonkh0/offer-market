@@ -1,7 +1,20 @@
 import React from "react";
-import Cards from "../cards/Cards";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper/modules";
+
+import Cards from "../cards/Cards";
 import style from "./Categories.module.css";
+import Card from "../card/Card";
 
 function Categories() {
   return (
@@ -48,6 +61,55 @@ function Categories() {
         </div>
       </div>
       <div className={style.categories}>
+        <>
+          <Swiper
+            slidesPerView={1}
+            centeredSlides={false}
+            grabCursor={true}
+            keyboard={{
+              enabled: true,
+            }}
+            breakpoints={{
+              269: {
+                slidesPerView: 4,
+                slidesPerGroup: 3,
+              },
+            }}
+            scrollbar={true}
+            navigation={true}
+            
+            modules={[Keyboard, Scrollbar, Navigation, Pagination]}
+            className={"mySwiper "+style.sw}
+          >
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card/>
+            </SwiperSlide>
+          </Swiper>
+        </>
         <div className={style.category}>
           <p>
             Fashion <a href="/#">view more</a>

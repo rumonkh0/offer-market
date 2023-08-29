@@ -1,4 +1,5 @@
 .rounded {
+<<<<<<< HEAD
   border-radius: 40px;
   width: 100%;
   box-shadow: inset rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -7,15 +8,32 @@
 
 .glide {
   overflow: hidden;
+=======
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+>>>>>>> devolop
 }
-.glide{
-  overflow: hidden;
+.glide {
   margin: 10px 0;
+  padding-bottom: 20px;
+  overflow: hidden;
 }
 .glide__track {
   overflow: visible;
   margin: auto;
   width: 90%;
+}
+.glide__track > ul{
+  padding-bottom: 20px;
+}
+
+.slider {
+  border-radius: 40px;
+  box-shadow: inset rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    overflow: hidden;
+  height: auto !important;
 }
 
 .glide__arrow__left,
@@ -34,10 +52,12 @@
   border-color: #fff;
 }
 .glide__arrow__left {
-  left: 7%;
+  left: 100px;
+  transform: translateY(-40px);
 }
 .glide__arrow__right {
-  right: 7%;
+  right: 100px;
+  transform: translateY(-40px);
 }
 .svg {
   transform: rotate(180deg);
@@ -51,33 +71,31 @@
   left: 50%;
   list-style: none;
   position: absolute;
-  transform: translateX(-50%);
+  transform: translate(-50%, 400%);
   z-index: 2;
 }
+
 .glide__bullet {
-  background-color: hsla(0, 0%, 100%, 0.5);
-  border: 2px solid transparent;
-  border-radius: 50%;
+  /* background-color: hsla(0, 0%, 100%, 0.5); */
+  /* border: 2px solid transparent;
   box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  height: 9px;
   line-height: 0;
   margin: 0 0.25em;
   padding: 0;
-  transition: all 0.3s ease-in-out;
-  width: 9px;
+  transition: all 0.3s ease-in-out; */
+  border-radius: 3px;
+  height: 3px;
+  width: 20px;
 }
-.glide__bullet:focus {
+/* .glide__bullet:focus {
   outline: none;
 }
 .glide__bullet:focus,
 .glide__bullet:hover {
-  background-color: hsla(0, 0%, 100%, 0.5);
   border: 2px solid #fff;
-}
-.glide__bullet--active {
-  background-color: #fff;
-}
+} */
+
 .glide--swipeable {
   cursor: grab;
   cursor: -webkit-grab;
@@ -85,4 +103,11 @@
 .glide--dragging {
   cursor: grabbing;
   cursor: -webkit-grabbing;
+}
+
+@media screen and (max-width: 768px) {
+  .glide .glide__arrow__left,
+  .glide__arrow__right {
+    display: none;
+  }
 }
