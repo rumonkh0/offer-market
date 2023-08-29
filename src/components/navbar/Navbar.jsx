@@ -3,7 +3,7 @@ import "./style1.css";
 
 function Navbar() {
   return (
-    <navbar>
+    <div className="navbar">
       <input type="checkbox" id="check" />
       <nav className="nav">
         <div className="first-container" id="brand-title">
@@ -42,7 +42,7 @@ function Navbar() {
           </li>
         </ul>
       </div>
-    </navbar>
+    </div>
   );
 }
 // {

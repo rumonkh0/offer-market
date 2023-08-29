@@ -19,6 +19,18 @@ p > a {
   padding: 10px;
   width: calc(100% - 250px);
 }
+.hor {
+  display: grid;
+  height: 90px;
+  grid-gap: 0 20px; /* row gap: 0, column gap: 20px */
+  grid-auto-flow: column; /* place grid items in columns */
+  grid-auto-columns: 250px; /* default size for the columns in the grid */
+  overflow-x: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 385px;
+  place-items: center;
+}
 .category {
   padding-bottom: 40px;
 }
@@ -32,7 +44,13 @@ p > a {
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .main {
+  .sidebar {
     display: none;
+  }
+  .categories {
+    width: 100%;
+  }
+  .hor {
+    height: 11rem;
   }
 }
