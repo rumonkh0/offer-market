@@ -15,7 +15,7 @@ const sliderConfiguration = {
   gap: 30,
   startAt: 0,
   type: "carousel",
-  // autoplay: 3000,
+  autoplay: 3000,
   // peek: 80,
   perView: 1,
 };
