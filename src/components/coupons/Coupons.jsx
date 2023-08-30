@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./coupons.module.css";
 import Cards from "../cards/Cards";
+import products from "../../__data/product";
 // import Tips from "../tips/Tips";
 
 function Coupons() {
@@ -14,11 +15,11 @@ function Coupons() {
       </div>
       <div className={style.section}>
         <p>Featured Deals</p>
-        <Cards />
+        <Cards products={products}/>
       </div>
       <div className={style.section}>
         <p>Patio Furniture</p>
-        <Cards />
+        <Cards products={products}/>
       </div>
       {/* <div className={style.section}>
         <p>Saving Tips</p>

@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Cards from "../cards/Cards";
 import style from "./Categories.module.css";
-import Card from "../card/Card";
 import useScript from "../../utils/useScript";
+import products from "../../__data/product";
 
 function Categories() {
   useScript("script.js");
@@ -55,52 +55,19 @@ function Categories() {
           <p>
             Fashion <a href="/#">view more</a>
           </p>
-          <div className={"hor " + style.hor}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-          </div>
+          <Cards gridv={"horscroll " + style.hor} products={products} />
         </div>
         <div className={style.category}>
           <p>
             Beauty & Glamour <a href="/#">view more</a>
           </p>
-          <div className={"hor " + style.hor}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-          </div>
+          <Cards gridv={"horscroll " + style.hor} products={products} />
         </div>
         <div className={style.category}>
           <p>
             Electronics <a href="/#">view more</a>
           </p>
-          <div className={"hor " + style.hor}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-          </div>
+          <Cards gridv={"horscroll " + style.hor} products={products} />
         </div>
       </div>
     </div>

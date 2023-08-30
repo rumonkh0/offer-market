@@ -24,7 +24,6 @@ function Slider() {
   const [width, setwidth] = useState([window.innerWidth, window.innerHeight]);
   if (width[0] < 768) {
     images = mobileimage;
-    console.log("image seems to changed");
   } else {
     images = pcImages;
   }
@@ -59,9 +58,6 @@ function Slider() {
     return () => slider.destroy();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-
-
 
   return (
     <div className={"glide " + style.glide}>

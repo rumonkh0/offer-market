@@ -26,8 +26,8 @@ p > a {
   grid-auto-flow: column; /* place grid items in columns */
   grid-auto-columns: 250px; /* default size for the columns in the grid */
   overflow-x: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto 0px;
+  padding: 0 10px;
   height: 385px;
   place-items: center;
 }

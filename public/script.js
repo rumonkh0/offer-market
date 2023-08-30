@@ -1,18 +1,17 @@
-var slider = document.querySelectorAll(".hor");
-var mouseDown = false;
-var startX, scrollLeft;
-
-var startDragging = function (e) {
-  mouseDown = true;
-  slider.forEach((ele) => {
+var slider = document.querySelectorAll(".horscroll");
+slider.forEach((ele) => {
+  var mouseDown = false;
+  var startX, scrollLeft;
+  console.log(`startX ${startX},,, scrollLeft ${scrollLeft}`);
+  var startDragging = function (e) {
+    mouseDown = true;
     startX = e.pageX - ele.offsetLeft;
     scrollLeft = ele.scrollLeft;
-  });
-};
-var stopDragging = function (event) {
-  mouseDown = false;
-};
-slider.forEach((ele) => {
+  };
+  var stopDragging = function (event) {
+    mouseDown = false;
+  };
+
   ele.addEventListener("mousemove", (e) => {
     e.preventDefault();
     if (!mouseDown) {
@@ -21,12 +20,12 @@ slider.forEach((ele) => {
     var x = e.pageX - ele.offsetLeft;
     var scroll = x - startX;
     ele.scrollLeft = scrollLeft - scroll;
-  });
-});
 
-// Add the event listeners
-slider.forEach((x) => {
-  x.addEventListener("mousedown", startDragging, false);
-  x.addEventListener("mouseup", stopDragging, false);
-  x.addEventListener("mouseleave", stopDragging, false);
+    console.log(`startX ${startX},,, scrollLeft ${scrollLeft}`);
+  });
+
+  // Add the event listeners
+  ele.addEventListener("mousedown", startDragging, false);
+  ele.addEventListener("mouseup", stopDragging, false);
+  ele.addEventListener("mouseleave", stopDragging, false);
 });

@@ -1,17 +1,14 @@
 import React from "react";
 import Card from "../card/Card";
-import style from "./cards.module.css"
+import style from "./cards.module.css";
 
-function Cards() {
+function Cards({ gridv, products }) {
   return (
-      <div className={style.card_holder}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+    <div className={`${style.card_holder} + ${gridv && gridv}`}>
+      {products.map((item) => (
+        <Card key={item._id} item={item} />
+      ))}
+    </div>
   );
 }
 
