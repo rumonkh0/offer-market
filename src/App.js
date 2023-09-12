@@ -1,23 +1,22 @@
 import "./App.css";
-import Slider from "./components/slider/Slider";
-import Coupouns from "./components/coupons/Coupons";
-import Categories from "./components/categories/Categories";
-import Navbar from "./components/navbar/Navbar";
-import Brands from "./components/brands/Brands";
-import Mail from "./components/mail/Mail";
-import Footer from "./components/footer/Footer"
+import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Admin from "./components/adminLogin/Admin";
+import Home from "./components/home/Home";
+import AuthState from "./context/auth/AuthState";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Slider />
-      <Coupouns />
-      <Categories />
-      <Mail/>
-      <Brands/>
-      <Footer/>
-    </div>
+    <AuthState>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/admin" element={<Admin />}></Route>
+          </Routes>
+        </div>
+      </Router>
+    </AuthState>
   );
 }
 

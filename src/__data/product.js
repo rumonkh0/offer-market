@@ -1,7 +1,6 @@
  const products = [
   {
-    "_id": "01",
-    "Name": "Watch",
+    "name": "Watch",
     "details": "Whether you're running errands or shopping the sales.",
     "image": "images/products/image-1.jpg",
     "url": "https://www.daraz.com",
@@ -14,8 +13,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "02",
-    "Name": "Shirt",
+    "name": "Shirt",
     "details": "A stylish shirt for any occasion.",
     "image": "images/products/image-2.jpg",
     "url": "https://www.example.com",
@@ -28,8 +26,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "03",
-    "Name": "Dress",
+    "name": "Dress",
     "details": "Elegant and comfortable dress for special events.",
     "image": "images/products/image-3.jpg",
     "url": "https://www.samplestore.com",
@@ -42,8 +39,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "04",
-    "Name": "Sneakers",
+    "name": "Sneakers",
     "details": "Stay comfortable and stylish with these sneakers.",
     "image": "images/products/image-4.jpg",
     "url": "https://www.sneakerstore.com",
@@ -56,8 +52,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "05",
-    "Name": "Handbag",
+    "name": "Handbag",
     "details": "A fashionable and functional accessory for any outfit.",
     "image": "images/products/image-5.jpg",
     "url": "https://www.accessorystore.com",
@@ -70,8 +65,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "06",
-    "Name": "Jeans",
+    "name": "Jeans",
     "details": "Classic denim jeans for a timeless look.",
     "image": "images/products/image-6.jpg",
     "url": "https://www.denimstore.com",
@@ -84,8 +78,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "07",
-    "Name": "Earrings",
+    "name": "Earrings",
     "details": "Add a touch of elegance with these earrings.",
     "image": "images/products/image-7.jpg",
     "url": "https://www.jewelrystore.com",
@@ -98,8 +91,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "08",
-    "Name": "Tie",
+    "name": "Tie",
     "details": "Complete your formal look with this stylish tie.",
     "image": "images/products/image-8.jpg",
     "url": "https://www.menswearstore.com",
@@ -112,8 +104,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "09",
-    "Name": "Skirt",
+    "name": "Skirt",
     "details": "A versatile skirt for any occasion.",
     "image": "images/products/image-9.jpg",
     "url": "https://www.clothingstore.com",
@@ -126,8 +117,7 @@
     "created-date": "2015-03-25"
   },
   {
-    "_id": "10",
-    "Name": "Hat",
+    "name": "Hat",
     "details": "Stay stylish and protected from the sun with this hat.",
     "image": "images/products/image-10.jpg",
     "url": "https://www.hatstore.com",

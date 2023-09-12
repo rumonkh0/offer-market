@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Afique</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="formContainer">
+        <div class="container vh-100 p-5">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="name" class="form-label text-white fw-semibold">Name</label>
+                    <input type="email" class="form-control" id="name" placeholder="name">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="details" class="form-label text-white fw-semibold">Deatails</label>
+                    <textarea class="form-control" id="details" rows="3" placeholder="deatails"></textarea>                  
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="price" class="form-label text-white fw-semibold">Price</label>
+                    <input type="email" class="form-control" id="price" placeholder="price">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="image" class="form-label text-white fw-semibold">Image</label>
+                    <select class="form-select" id="image" aria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="1">One</option>
+                        <option value="2">two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="row mb-3 text-center">
+                <div class="col d-grid gap-2">
+                    <button class="btn btn-primary fw-semibold">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- foot -->
+    <div class="container-fulid">
+        <div class="row m-2 p-3">
+            <div class="col-lg-3">
+                <p class="text-color fs-5 text-center my-2 py-1">Creator Name</p>
+            </div>
+
+            <div class="col-lg-3">
+                <p class="text-color fs-5 text-center my-2 py-1">Request Time</p>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-3 me-5 text-center my-2">
+                        <button class="btn btn-primary">Details</button>
+                    </div>
+                    <div class="col-md-3 me-5 text-center my-2">
+                        <button class="btn btn-success">Approve</button>
+                    </div>
+                    <div class="col-md-3 text-center my-2">
+                        <button class="btn btn-danger ">Reject</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

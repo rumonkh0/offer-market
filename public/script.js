@@ -2,7 +2,6 @@ var slider = document.querySelectorAll(".horscroll");
 slider.forEach((ele) => {
   var mouseDown = false;
   var startX, scrollLeft;
-  console.log(`startX ${startX},,, scrollLeft ${scrollLeft}`);
   var startDragging = function (e) {
     mouseDown = true;
     startX = e.pageX - ele.offsetLeft;
@@ -20,8 +19,6 @@ slider.forEach((ele) => {
     var x = e.pageX - ele.offsetLeft;
     var scroll = x - startX;
     ele.scrollLeft = scrollLeft - scroll;
-
-    console.log(`startX ${startX},,, scrollLeft ${scrollLeft}`);
   });
 
   // Add the event listeners
