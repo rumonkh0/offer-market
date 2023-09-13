@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import RequestsContext from "../../../context/requests/requestsContext";
+import { useAuth } from "../../../context/auth/AuthState";
 
 function Request() {
   const [formData, setFormData] = useState({});
+  const [authState] = useAuth();
+  const { user } = authState;
+  const { state, getRequests, createRequest } = useContext(RequestsContext);
 
   const onChange = (e) => {
     setFormData({
@@ -11,8 +16,11 @@ function Request() {
   };
 
   const onSubmit = (e) => {
-    console.log(formData);
     e.preventDefault();
+    formData.createdBy = user._id;
+    formData.category = formData.categoryp.split(",");
+    // console.log(formData);
+    createRequest(formData);
   };
 
   return (
@@ -102,7 +110,7 @@ function Request() {
             <input
               type="text"
               onChange={onChange}
-              name="category"
+              name="categoryp"
               className="form-control"
               id="price"
               placeholder="category"

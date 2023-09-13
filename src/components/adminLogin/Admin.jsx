@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
 import { useAuth, login } from "../../context/auth/AuthState";
 import Adminh from "../admin/Adminh";
-import Moderatorh from "../moderator/Moderatorh"
+import Moderatorh from "../moderator/Moderatorh";
 import "./admin.css";
 function Admin() {
   const [authState, authDispatch] = useAuth();
@@ -10,9 +9,7 @@ function Admin() {
 
   const [formData, setFormData] = useState({});
 
-  useEffect(() => {
-   
-  }, [error, isAuthenticated, authDispatch]);
+  useEffect(() => {}, [error, isAuthenticated, authDispatch, loading]);
 
   const onChange = (e) => {
     setFormData({
@@ -32,7 +29,6 @@ function Admin() {
 
   if (isAuthenticated && user.role === "admin") return <Adminh />;
   if (isAuthenticated && user.role === "moderator") return <Moderatorh />;
-  // if (isAuthenticated && user.role === "admin") return <Navigate to="/" />;
   return (
     <div id="conatiner">
       <h1 id="header">Please sign in</h1>

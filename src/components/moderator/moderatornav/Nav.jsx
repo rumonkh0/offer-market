@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from "./nav.module.css";
 import { useAuth, logout } from "../../../context/auth/AuthState";
 
@@ -14,11 +15,18 @@ function Nav() {
     <div className={style.nav}>
       <div>Hello, {user.name}</div>
       <div className={style.middle}>
-        <div className={style.menu}>request a product</div>
-        <div className={style.menu}>see my requests</div>
+        <Link to="/admin/createrequest" className={style.menu}>
+          request a product
+        </Link>
+        <Link to="/admin/requests" className={style.menu}>
+          see my requests
+        </Link>
+        <Link to="/admin/products" className={style.menu}>
+          see my products
+        </Link>
       </div>
       <div>
-        <div className={style.menu +" "+ style.logout} onClick={onClick}>
+        <div className={style.menu + " " + style.logout} onClick={onClick}>
           logout
         </div>
       </div>

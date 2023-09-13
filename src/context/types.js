@@ -9,6 +9,10 @@ export const LOGOUT = "LOGOUT";
 
 //REQUESTS
 export const CREATE_REQUEST = "CREATE_REQUEST";
+export const GET_REQUESTS = "GET_REQUESTS";
+export const APPROVE = "APPROVE";
+export const REJECT = "REJECT";
+
 export const DELETE_CONTACT = "DELETE_CONTACT";
 export const SET_CURRENT = "SET_CURRENT";
 export const CLEAR_CURRENT = "CLEAR_CURRENT";
