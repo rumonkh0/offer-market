@@ -28,11 +28,13 @@ const authReducer = (state, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        ...action.payload,
-        isAuthenticated: true,
         loading: false,
       };
     case REGISTER_FAIL:
+      return {
+        ...state,
+        loading: false,
+      };
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOGOUT:

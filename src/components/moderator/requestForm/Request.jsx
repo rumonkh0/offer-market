@@ -4,6 +4,7 @@ import { useAuth } from "../../../context/auth/AuthState";
 
 function Request() {
   const [formData, setFormData] = useState({});
+  const [selectedFile, setSelectedFile] = useState();
   const [authState] = useAuth();
   const { user } = authState;
   const { state, getRequests, createRequest } = useContext(RequestsContext);
@@ -14,13 +15,21 @@ function Request() {
       [e.target.name]: e.target.value,
     });
   };
-
+  const onFileChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
+  // var reqdata = new FormData();
   const onSubmit = (e) => {
-    e.preventDefault();
     formData.createdBy = user._id;
-    formData.category = formData.categoryp.split(",");
-    // console.log(formData);
-    createRequest(formData);
+    formData.categoryp !== undefined &&
+      (formData.category = formData.categoryp.split(","));
+
+    // reqdata.append("body", formData);
+    // reqdata.append("file", selectedFile);
+    // console.log(reqdata.body);
+
+    createRequest(formData, selectedFile);
+    e.preventDefault();
   };
 
   return (
@@ -61,23 +70,17 @@ function Request() {
           </div>
         </div>
 
-        <div className="row mb-3">
-          <div className="col">
-            <label
-              htmlFor="price"
-              className="form-label text-white fw-semibold"
-            >
-              image
-            </label>
-            <input
-              type="email"
-              onChange={onChange}
-              name="image"
-              className="form-control"
-              id="price"
-              placeholder="image"
-            />
-          </div>
+        <div className="mb-3">
+          <label htmlFor="formFile" className="form-label">
+            Upload image
+          </label>
+          <input
+            onChange={onFileChange}
+            name="file"
+            className="form-control"
+            type="file"
+            id="formFile"
+          />
         </div>
 
         <div className="row mb-3">

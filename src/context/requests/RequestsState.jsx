@@ -22,23 +22,31 @@ const RequestsState = (props) => {
 
   const setLoading = () => dispatch({ type: SET_LOADING });
 
-  const createRequest = async (formData) => {
+  const createRequest = async (formData, file) => {
     try {
-      const res = await axios.post("/requests/", formData);
+      const res = await axios.post(
+        "/api/requests/",
+        { formData, file: file },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       dispatch({ type: CREATE_REQUEST, payload: res.data });
     } catch (error) {}
   };
 
   const getRequests = async (controllerId) => {
     try {
-      const res = await axios.get(`/controllers/${controllerId}/requests/`);
+      const res = await axios.get(`/api/controllers/${controllerId}/requests/`);
       dispatch({ type: GET_REQUESTS, payload: res.data.data });
     } catch (error) {}
   };
 
   const getRequestsAll = async () => {
     try {
-      const res = await axios.get(`/requests/`);
+      const res = await axios.get(`/api/requests/`);
       console.log(res.data);
       dispatch({ type: GET_REQUESTS, payload: res.data.data });
     } catch (error) {}
@@ -46,7 +54,7 @@ const RequestsState = (props) => {
 
   const approveRequest = async (requestId) => {
     try {
-      await axios.put(`/requests/${requestId}/approve`);
+      await axios.put(`/api/requests/${requestId}/approve`);
       setLoading();
       getRequestsAll();
       // dispatch({ type: APPROVE });
@@ -54,7 +62,9 @@ const RequestsState = (props) => {
   };
   const rejectRequest = async (requestId) => {
     try {
-      await axios.put(`/requests/${requestId}/reject`);
+      await axios.put(`/api/requests/${requestId}/reject`);
+      setLoading();
+      getRequestsAll();
       // dispatch({ type: REJECT });
     } catch (error) {}
   };

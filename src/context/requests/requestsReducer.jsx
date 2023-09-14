@@ -24,6 +24,9 @@ const requestsReducer = (state, action) => {
         ...state,
         loading: false,
         requests: action.payload,
+        filtered: action.payload.filter((item) => {
+          return item.status.includes("pending");
+        }),
       };
     case APPROVE:
     case REJECT:

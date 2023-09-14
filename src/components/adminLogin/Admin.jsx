@@ -18,7 +18,6 @@ function Admin() {
     });
   };
   const onSubmit = (e) => {
-    console.log(formData);
     e.preventDefault();
     login(authDispatch, formData);
   };

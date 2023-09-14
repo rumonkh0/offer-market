@@ -7,12 +7,10 @@ function Requests() {
     useContext(RequestsContext);
   useEffect(() => {
     getRequestsAll();
-    console.log(state);
     // eslint-disable-next-line
   }, [state.loading]);
 
   const filter = (e) => {
-    console.log(e.target.value);
     setFiltered(e.target.value);
   };
 
@@ -28,15 +26,18 @@ function Requests() {
     return <div>loading</div>;
   }
 
+  var requests = state.requests;
+  if (filtered === "pending") requests = state.filtered;
+
   return (
     <div>
-      <div class="row mb-3">
-        <div class="col">
-          <label for="image" class="form-label text-white fw-semibold">
+      <div className="row mb-3">
+        <div className="col">
+          <label htmlFor="image" className="form-label text-white fw-semibold">
             Image
           </label>
           <select
-            class="form-select"
+            className="form-select"
             id="image"
             value={filtered}
             onChange={filter}
@@ -47,9 +48,9 @@ function Requests() {
           </select>
         </div>
       </div>
-      {state.requests.length > 0 ? (
+      {requests.length > 0 ? (
         <div>
-          {state.requests.map((item) => (
+          {requests.map((item) => (
             <div key={item._id} className="container-fulid">
               <div className="row m-2 p-3">
                 <div className="col-lg-3">
@@ -69,22 +70,14 @@ function Requests() {
                     <div className="col-md-3 me-5 text-center my-2">
                       <button className="btn btn-primary">details</button>
                     </div>
-                    {item.status === "pending" ? (
-                      <div className="col-md-3 me-5 text-center my-2">
-                        <button
-                          onClick={() => approve(item._id)}
-                          className="btn btn-success"
-                        >
-                          Approve
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="col-md-3 me-5 text-center my-2">
-                        <button className="btn btn-success disabled">
-                          Approved
-                        </button>
-                      </div>
-                    )}
+
+                    <div className="col-md-3 me-5 text-center my-2">
+                      <button onClick={() => approve(item._id)} className={`btn btn-success ${
+                          item.status === "pending" ? "" : "disabled"
+                        }`}>
+                        {item.status === "approved" ? "approved" : "approve"}
+                      </button>
+                    </div>
 
                     <div className="col-md-3 text-center my-2">
                       <button
@@ -93,7 +86,7 @@ function Requests() {
                           item.status === "pending" ? "" : "disabled"
                         }`}
                       >
-                        Reject
+                        {item.status === "rejected" ? "rejected" : "reject"}
                       </button>
                     </div>
                   </div>

@@ -11,7 +11,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  CLEAR_ERRORS,
+  // CLEAR_ERRORS,
 } from "../types";
 
 // Create a custom hook to use the auth context
@@ -26,7 +26,7 @@ const setLoading = (dispatch) => dispatch({ type: SET_LOADING });
 // // Load User
 export const loadUser = async (dispatch) => {
   try {
-    const res = await axios.get("/auth/me");
+    const res = await axios.get("/api/auth/me");
 
     dispatch({
       type: USER_LOADED,
@@ -38,28 +38,27 @@ export const loadUser = async (dispatch) => {
 };
 
 // Register User
-// export const register = async (dispatch, formData) => {
-//   try {
-//     const res = await axios.post("/api/users", formData);
+export const createModerator = async (dispatch, formData) => {
+  setLoading(dispatch);
+  try {
+    const res = await axios.post("/api/controllers", formData);
 
-//     dispatch({
-//       type: REGISTER_SUCCESS,
-//       payload: res.data,
-//     });
-
-//     loadUser(dispatch);
-//   } catch (err) {
-//     dispatch({
-//       type: REGISTER_FAIL,
-//       payload: err.response.data.msg,
-//     });
-//   }
-// };
+    dispatch({
+      type: REGISTER_SUCCESS,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: REGISTER_FAIL,
+      payload: err.response.data.error,
+    });
+  }
+};
 
 // Login User
 export const login = async (dispatch, formData) => {
   try {
-    const res = await axios.post("/auth/login", formData);
+    const res = await axios.post("/api/auth/login", formData);
 
     dispatch({
       type: LOGIN_SUCCESS,
