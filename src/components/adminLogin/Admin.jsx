@@ -25,7 +25,7 @@ function Admin() {
   if (loading) {
     return <div>loading</div>;
   }
-
+  console.log(authState)
   if (isAuthenticated && user.role === "admin") return <Adminh />;
   if (isAuthenticated && user.role === "moderator") return <Moderatorh />;
   return (

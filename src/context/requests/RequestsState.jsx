@@ -47,7 +47,6 @@ const RequestsState = (props) => {
   const getRequestsAll = async () => {
     try {
       const res = await axios.get(`/api/requests/`);
-      console.log(res.data);
       dispatch({ type: GET_REQUESTS, payload: res.data.data });
     } catch (error) {}
   };
